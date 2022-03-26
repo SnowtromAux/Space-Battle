@@ -393,54 +393,7 @@ function drawShop(){
         context.fillStyle = "purple";
         context.fillRect(540, 30, 200, 200);
         
-        if(pShip == 1){
-            ship1.draw(540, 30, 200, 200);
-        }
-        
-        if(pShip == 2){
-            ship2.draw(540, 30, 200, 200);
-        }
-
-
-        if(pShip == 3){
-            ship3.draw(540, 30, 200, 200);
-        }
-
-        if(pShip == 4){
-            ship4.draw(540, 30, 200, 200);
-        }
-
-        if(pShip == 5){
-            ship5.draw(540, 30, 200, 200);
-        }
-        
-        if(pShip == 6){
-            ship6.draw(540, 30, 200, 200);
-        }
-        
-        if(pShip == 7){
-            ship7.draw(540, 30, 200, 200);
-        }
-        
-        if(pShip == 8){
-            ship8.draw(540, 30, 200, 200);
-        }
-        
-        if(pShip == 9){
-            ship9.draw(540, 30, 200, 200);
-        }
-        
-        if(pShip == 10){
-            ship10.draw(540, 30, 200, 200);
-        }
-        
-        if(pShip == 11){
-            ship11.draw(540, 30, 200, 200);
-        }
-        
-        if(pShip == 12){
-            ship12.draw(540, 30, 200, 200);
-        }
+        shipType[pShip].draw(540, 30, 200, 200);
 
 
         //Player Bullet

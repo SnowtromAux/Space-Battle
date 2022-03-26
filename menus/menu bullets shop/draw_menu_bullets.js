@@ -190,124 +190,90 @@ function drawBullets(){
                     context.font="italic small-caps bold 30px arial";
                     context.fillText(`Cost: ${bulletType[i].cost}`, 340, 390);
                 }
+
+                
+                context.fillStyle = "blue";
+
+                switch(i){
+                    case 1:
+                        context.font="italic small-caps bold 60px arial";
+                        context.fillText(`Clement` , 405, 110);
+                        break;
+                    case 2:
+                        context.font="italic small-caps bold 60px arial";
+                        context.fillText(`Rimfire` , 430, 110);
+                        break;
+                    case 3:
+                        context.font="italic small-caps bold 60px arial";
+                        context.fillText(`22BB` , 470, 110);
+                        break;
+                    case 4:
+                        context.font="italic small-caps bold 60px arial";
+                        context.fillText(`Tokarev` , 410, 110);
+                        break;
+                    case 5:
+                        context.font="italic small-caps bold 47px arial";
+                        context.fillText(`Remington Rimfire` , 315, 110);
+                        break;
+                    case 6:
+                        context.font="italic small-caps bold 60px arial";
+                        context.fillText(`22CB` , 470, 110);
+                        break;
+                    case 7:
+                        context.font="italic small-caps bold 60px arial";
+                        context.fillText(`Bergmann` , 390, 110);
+                        break;
+                    case 8:
+                        context.font="italic small-caps bold 55px arial";
+                        context.fillText(`Magnum Rimfire` , 310, 110);
+                        break;
+                    case 9:
+                        context.font="italic small-caps bold 60px arial";
+                        context.fillText(`22LR` , 470, 110);
+                        break;
+                    case 10:
+                        context.font="italic small-caps bold 60px arial";
+                        context.fillText(`Power-Mag` , 390, 110);
+                        break;
+                    case 11:
+                        context.font="italic small-caps bold 60px arial";
+                        context.fillText(`Cor - Bon` , 390, 110);
+                        break;
+                    case 12:
+                        context.font="italic small-caps bold 55px arial";
+                        context.fillText(`Action Express` , 325, 110);
+                        break;
+                    case 13:
+                        context.font="italic small-caps bold 46px arial";
+                        context.fillText(`Remington Magnum` , 310, 110);
+                        break;
+                    case 14:
+                        context.font="italic small-caps bold 55px arial";
+                        context.fillText(`Super magnum` , 335, 110);
+                        break;
+                    case 15:
+                        context.font="italic small-caps bold 45px arial";
+                        context.fillText(`Winchester Magnum` , 303, 110);
+                        break;
+                    case 16:
+                        context.font="italic small-caps bold 55px arial";
+                        context.fillText(`Wildy Magnum` , 333, 110);
+                        break;
+                    case 17:
+                        context.font="italic small-caps bold 60px arial";
+                        context.fillText(`Tranter` , 410, 110);
+                        break;
+                    case 18:
+                        context.font="italic small-caps bold 60px arial";
+                        context.fillText(`Marlin` , 430, 110);
+                        break;
+                    case 19:
+                        context.font="italic small-caps bold 60px arial";
+                        context.fillText(`Avenger` , 405, 110);
+                        break;
+
+                }
             }
-        }
-
-
-        //Bullets buying card texts
-        if(littlemenu == "bullet_card_1"){
-
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 60px arial";
-            context.fillText(`Clement` , 405, 110);
-
-        }else if(littlemenu == "bullet_card_2"){
-
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 60px arial";
-            context.fillText(`Rimfire` , 430, 110);
-        
-        }else if(littlemenu == "bullet_card_3"){
-
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 60px arial";
-            context.fillText(`22BB` , 470, 110);
-
-        }else if(littlemenu == "bullet_card_4"){
-  
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 60px arial";
-            context.fillText(`Tokarev` , 410, 110);
-
-        }else if(littlemenu == "bullet_card_5"){
-
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 47px arial";
-            context.fillText(`Remington Rimfire` , 315, 110);
-
-        }else if(littlemenu == "bullet_card_6"){
-
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 60px arial";
-            context.fillText(`22CB` , 470, 110);
-
-        }else if(littlemenu == "bullet_card_7"){
-
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 60px arial";
-            context.fillText(`Bergmann` , 390, 110);
-
-        }else if(littlemenu == "bullet_card_8"){
-
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 55px arial";
-            context.fillText(`Magnum Rimfire` , 310, 110);
-
-        }else if(littlemenu == "bullet_card_9"){
-
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 60px arial";
-            context.fillText(`22LR` , 470, 110);
-        }else if(littlemenu == "bullet_card_10"){
-
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 60px arial";
-            context.fillText(`Power-Mag` , 390, 110);
-
-        }else if(littlemenu == "bullet_card_11"){
-
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 60px arial";
-            context.fillText(`Cor - Bon` , 390, 110);
-
-        }else if(littlemenu == "bullet_card_12"){
-       
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 55px arial";
-            context.fillText(`Action Express` , 325, 110);
-
-        }else if(littlemenu == "bullet_card_13"){
-          
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 46px arial";
-            context.fillText(`Remington Magnum` , 310, 110);
-
-        }else if(littlemenu == "bullet_card_14"){
-         
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 55px arial";
-            context.fillText(`Super magnum` , 335, 110);
-
-        }else if(littlemenu == "bullet_card_15"){
-  
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 45px arial";
-            context.fillText(`Winchester Magnum` , 303, 110);
-
-        }else if(littlemenu == "bullet_card_16"){
-            
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 55px arial";
-            context.fillText(`Wildy Magnum` , 333, 110);
-
-        }else if(littlemenu == "bullet_card_17"){
-            
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 60px arial";
-            context.fillText(`Tranter` , 410, 110);
-
-        }else if(littlemenu == "bullet_card_18"){
-           
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 60px arial";
-            context.fillText(`Marlin` , 430, 110);
-
-        }else if(littlemenu == "bullet_card_19"){
-  
-            context.fillStyle = "blue";
-            context.font="italic small-caps bold 60px arial";
-            context.fillText(`Avenger` , 405, 110);
-
         }
     }
 }
