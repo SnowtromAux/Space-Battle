@@ -392,7 +392,7 @@ function drawShop(){
 
         context.fillStyle = "purple";
         context.fillRect(540, 30, 200, 200);
-
+        
         if(pShip == 1){
             ship1.draw(540, 30, 200, 200);
         }
@@ -452,98 +452,7 @@ function drawShop(){
         context.fillStyle = "purple";
         context.fillRect(540, 280, 200, 200);
 
-        if(pBullet == 1){
-            bullet1.draw(540, 280, 200, 200);
-        }
-
-        if(pBullet == 2){
-            bullet2.draw(540, 280, 200, 200);
-        }
-
-        
-        if(pBullet == 3){
-            bullet3.draw(540, 280, 200, 200);
-        }
-
-        
-        if(pBullet == 4){
-            bullet4.draw(540, 280, 200, 200); 
-        }
-
-        
-        if(pBullet == 5){
-            bullet5.draw(540, 280, 200, 200);
-        }
-
-        
-        if(pBullet == 6){
-            bullet6.draw(540, 280, 200, 200);
-        }
-
-        
-        if(pBullet == 7){
-            bullet7.draw(540, 280, 200, 200);
-        }
-
-        if(pBullet == 8){
-            bullet8.draw(540, 280, 200, 200);
-        }
-
-
-        if(pBullet == 9){
-            bullet9.draw(540, 280, 200, 200);
-        }
-
-        
-        if(pBullet == 10){
-            bullet10.draw(540, 280, 200, 200);
-        }
-
-        
-        if(pBullet == 11){
-            bullet11.draw(540, 280, 200, 200);
-        }
-
-        
-        if(pBullet == 12){
-            bullet12.draw(540, 280, 200, 200);
-        }
-
-        
-        if(pBullet == 13){
-            bullet13.draw(540, 280, 200, 200);
-        }
-
-        
-        if(pBullet == 14){
-            bullet14.draw(540, 280, 200, 200);
-        }
-
-
-        if(pBullet == 15){
-            bullet15.draw(540, 280, 200, 200);
-        }
-
-        
-        if(pBullet == 16){
-            bullet16.draw(540, 280, 200, 200);
-        }
-
-        
-        if(pBullet == 17){
-            bullet17.draw(540, 280, 200, 200);
-        }
-
-        
-        if(pBullet == 18){
-            bullet18.draw(540, 280, 200, 200);
-        }
-
-        
-        if(pBullet == 19){
-            bullet19.draw(540, 280, 200, 200);
-        }
-
+        bulletType[pBullet].draw(540, 280, 200, 200)
 
         //Back Button
         context.fillStyle = "purple";

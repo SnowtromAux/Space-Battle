@@ -115,30 +115,7 @@ function updatePlayer(){
     }
 
 
-
-
-
-    switch(pBullet){
-        case 1: totalatt += bullet1.dmg;break;
-        case 2: totalatt += bullet2.dmg;break;
-        case 3: totalatt += bullet3.dmg;break;
-        case 4: totalatt += bullet4.dmg;break;
-        case 5: totalatt += bullet5.dmg;break;
-        case 6: totalatt += bullet6.dmg;break;
-        case 7: totalatt += bullet7.dmg;break;
-        case 8: totalatt += bullet8.dmg;break;
-        case 9: totalatt += bullet9.dmg;break;
-        case 10: totalatt += bullet10.dmg;break;
-        case 11: totalatt += bullet11.dmg;break;
-        case 12: totalatt += bullet12.dmg;break;
-        case 13: totalatt += bullet13.dmg;break;
-        case 14: totalatt += bullet14.dmg;break;
-        case 15: totalatt += bullet15.dmg;break;
-        case 16: totalatt += bullet16.dmg;break;
-        case 17: totalatt += bullet17.dmg;break;
-        case 18: totalatt += bullet18.dmg;break;
-        case 19: totalatt += bullet19.dmg;break;
-    }
-
+    totalatt += bulletType[pBullet].dmg;
+    
     pReload = totalrld;
 }

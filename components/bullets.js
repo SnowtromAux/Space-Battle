@@ -229,11 +229,26 @@ class Bullet19{
 }
 
 //Bullet Variable making
-let bullet1 = new Bullet1();let bullet2 = new Bullet2();let bullet3 = new Bullet3();
-let bullet4 = new Bullet4();let bullet5 = new Bullet5();let bullet6 = new Bullet6();
-let bullet7 = new Bullet7();let bullet8 = new Bullet8();let bullet9 = new Bullet9();
-let bullet10 = new Bullet10();let bullet11 = new Bullet11();let bullet12 = new Bullet12();
-let bullet13 = new Bullet13();let bullet14 = new Bullet14();let bullet15 = new Bullet15();
-let bullet16 = new Bullet16();let bullet17 = new Bullet17();let bullet18 = new Bullet18();
-let bullet19 = new Bullet19();
+let bulletType = [,
+    new Bullet1(),
+    new Bullet2(),
+    new Bullet3(),
+    new Bullet4(),
+    new Bullet5(),
+    new Bullet6(),
+    new Bullet7(),
+    new Bullet8(),
+    new Bullet9(),
+    new Bullet10(),
+    new Bullet11(),
+    new Bullet12(),
+    new Bullet13(),
+    new Bullet14(),
+    new Bullet15(),
+    new Bullet16(),
+    new Bullet17(),
+    new Bullet18(),
+    new Bullet19()
+];
+
 
