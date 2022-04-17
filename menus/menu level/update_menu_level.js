@@ -7,6 +7,7 @@ function updateLevel(index){
     if(sy2 == 600)sy2 = -600;
 
     if(isKeyPressed[80]){
+        songLvl[index].pause();
         littlemenu = "pause";
     }
 

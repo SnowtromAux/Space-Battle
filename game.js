@@ -78,9 +78,9 @@ function draw() {
 
 function mouseup() {
     mousePress = false;
-    
     switch(menu){
         case "start": 
+            song_start.play();
             clickStart();
             break;
         case "levels":
@@ -99,7 +99,7 @@ function mouseup() {
 
     for(let i = 1; i <= 15;i++){
         if(menu == `level${i}`){
-            levelsClick();
+            levelsClick(i);
         }
     }
 };

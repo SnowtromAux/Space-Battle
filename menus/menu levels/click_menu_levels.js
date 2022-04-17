@@ -19,7 +19,7 @@ function clickLevels(){
                 warmupStarted = false;
                 menu = `level${i}`;
                 littlemenu = "warmup";
-                song_start.stop();
+                song_start.pause();
             }
         }
     }

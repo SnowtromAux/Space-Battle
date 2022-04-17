@@ -65,6 +65,7 @@ function drawLevel(index){
                     clearInterval(countdown);
                 }else if(timeLeft == 1){
                     littlemenu = `level${index}`;
+                    songLvl[index].play();
                     clearInterval(countdown);
                 }else{
                     timeLeft--;
