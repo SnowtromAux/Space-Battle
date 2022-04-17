@@ -18,29 +18,27 @@ function drawShips(){
         context.fillText(`Your Ship` , 45, 60);
 
 
+        //Statistics draw
+        context.font="italic small-caps bold 30px arial";
+        
         //health drawing
         context.fillStyle = "pink";
-        context.font="italic small-caps bold 30px arial";
         context.fillText(`Health: ${totalhp}` , 40, 280);
 
         //body damage drawing
         context.fillStyle = "red";
-        context.font="italic small-caps bold 30px arial";
         context.fillText(`B.DMG: ${totalbd}` , 40, 340);
 
         //attack drawing
         context.fillStyle = "orange";
-        context.font="italic small-caps bold 30px arial";
         context.fillText(`Attack: ${totalatt}` , 40, 400);
 
         //reload drawing
         context.fillStyle = "green";
-        context.font="italic small-caps bold 30px arial";
         context.fillText(`Reload: ${totalrld}` , 40, 460);
 
         //earnings drawing
         context.fillStyle = "yellow";
-        context.font="italic small-caps bold 30px arial";
         context.fillText(`Earning: ${totalmny}%` , 40, 520);
 
         
@@ -84,24 +82,21 @@ function drawShips(){
 
                 shipType[i].draw(320, 170, 180, 180);
             
-                context.fillStyle = "pink";
                 context.font="italic small-caps bold 30px arial";
+
+                context.fillStyle = "pink";
                 context.fillText(`Health: ${shipType[i].hp}` , 550, 190);
     
                 context.fillStyle = "red";
-                context.font="italic small-caps bold 30px arial";
                 context.fillText(`B.DMG: ${shipType[i].bd}` , 550, 240);
     
                 context.fillStyle = "orange";
-                context.font="italic small-caps bold 30px arial";
                 context.fillText(`Attack: ${shipType[i].att}` , 550, 290);
                 
                 context.fillStyle = "green";
-                context.font="italic small-caps bold 30px arial";
                 context.fillText(`Reload: ${shipType[i].rld}` , 550, 340);
     
                 context.fillStyle = "yellow";
-                context.font="italic small-caps bold 30px arial";
                 context.fillText(`Earning: ${shipType[i].mny}%` , 550, 390);
     
                 context.fillStyle = "green";

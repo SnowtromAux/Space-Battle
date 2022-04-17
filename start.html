@@ -53,7 +53,7 @@
                         context.drawImage(imageWithBackupColorObject.img, x, y);
                     } 
                 }catch(e){
-                   // console.log("Missing image file: " + imageWithBackupColorObject.img.src);
+                    //console.log("Missing image file: " + imageWithBackupColorObject.img.src);
                     context.fillStyle = imageWithBackupColorObject.color;
                     if (xs===undefined){xs=100; ys=100;}
                     context.fillRect(x, y, xs, ys);
@@ -85,10 +85,10 @@
                 <script src="menus/menu levels/draw_menu_levels.js"></script>
                 <script src="menus/menu levels/click_menu_levels.js"></script>
             
-                <script src="menus/menu level1/update_menu_level1.js"></script>
-                <script src="menus/menu level1/draw_menu_level1.js"></script>
+                <script src="menus/menu level/update_menu_level.js"></script>
+                <script src="menus/menu level/draw_menu_level.js"></script>
+                <script src="menus/menu level/click_menu_level.js"></script>
             
-                <script src="click_pauses.js"></script>
                 <script src="game.js"></script>
 
             <script>

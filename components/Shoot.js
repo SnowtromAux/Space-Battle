@@ -1,12 +1,8 @@
 
-
-
-
-
 function shoot(){
-    
-        bulletX.push(drawingX + 35);
-        bulletY.push(drawingY - 10);
+        
+        bulletX.push(shipX + 35);
+        bulletY.push(shipY - 10);
         
         bullets.push(bulletType[pBullet]);
         

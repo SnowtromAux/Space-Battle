@@ -4,59 +4,18 @@ function clickShips(){
             menu = "shop";
         }
 
-
+       
 
         if(littlemenu == "nothing"){
-            if(mouseX >= 300 && mouseX <= 400 && mouseY >= 190 && mouseY <= 290){
-                littlemenu = "ship1_card";
-            }
-
-            if(mouseX >= 423 && mouseX <= 523 && mouseY >= 190 && mouseY <= 290){
-                littlemenu = "ship2_card";
-            }
-
-            if(mouseX >= 546 && mouseX <= 646 && mouseY >= 190 && mouseY <= 290){
-                littlemenu = "ship3_card";
-            }        
-
-            if(mouseX >= 669 && mouseX <= 769 && mouseY >= 190 && mouseY <= 290){
-                littlemenu = "ship4_card";
-            }
-
-
-
-            if(mouseX >= 300 && mouseX <= 400 && mouseY >= 310 && mouseY <= 410){
-                littlemenu = "ship5_card";
-            }
-
-            if(mouseX >= 423 && mouseX <= 523 && mouseY >= 310 && mouseY <= 410){
-                littlemenu = "ship6_card";
-            }
-
-            if(mouseX >= 546 && mouseX <= 646 && mouseY >= 310 && mouseY <= 410){
-                littlemenu = "ship7_card";
-            }        
-
-            if(mouseX >= 669 && mouseX <= 769 && mouseY >= 310  && mouseY <= 410){
-                littlemenu = "ship8_card";
-            }  
-
-
-
-            if(mouseX >= 300 && mouseX <= 400 && mouseY >= 430 && mouseY <= 530){
-                littlemenu = "ship9_card";
-            }
-
-            if(mouseX >= 423 && mouseX <= 523 && mouseY >= 430 && mouseY <= 530){
-                littlemenu = "ship10_card";
-            }
-
-            if(mouseX >= 546 && mouseX <= 646 && mouseY >= 430 && mouseY <= 530){
-                littlemenu = "ship11_card";
-            }        
-
-            if(mouseX >= 669 && mouseX <= 769 && mouseY >= 430 && mouseY <= 530){
-                littlemenu = "ship12_card";
+            for(let i = 1;i <= 12;i++){
+                
+                let posX =  + 300 + + 123 * ((i - 1) % 4);
+                let posY =  + 190 + + 120 * Math.floor((i-1) / 4);
+                
+                console.log(i + ": " + posX + " | " + posY)
+                if(mouseX >= posX && mouseX <= + posX + + 100 && mouseY >= posY && mouseY <= + posY + + 100)
+                    littlemenu = `ship${i}_card`;
+                
             }
         }else{
             for(let i = 1;i <= 12;i++){

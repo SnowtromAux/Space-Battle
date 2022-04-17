@@ -10,14 +10,14 @@ function drawBullets(){
         context.fillStyle = "#4A148C";
         context.fillRect(20, 220, 199, 40);
 
-        context.fillStyle = "white";
+
         context.font="italic small-caps bold 30px arial";
+
+        context.fillStyle = "white";
         context.fillText(`Your Bullet` , 25, 55);
 
 
         context.fillStyle = "orange";
-        context.font="italic small-caps bold 30px arial";
-
         bulletType[pBullet].draw(40, 60, 160, 155);
         context.fillText(`Attack: ${bulletType[pBullet].dmg}` , 25, 250);
 

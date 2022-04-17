@@ -9,7 +9,7 @@ function clickBullets(){
 
         
         if(littlemenu == "nothing"){
-
+            
             //Bullet card 1 click
             if(mouseX >= 242 && mouseX <= 332 && mouseY >= 170 && mouseY <= 260){
                 littlemenu = "bullet_card_1";
