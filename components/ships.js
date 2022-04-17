@@ -193,8 +193,18 @@ class Ship12{
 }
 
 //Ship Variable making
-let ship1 = new Ship1();let ship2 = new Ship2();let ship3 = new Ship3();
-let ship4 = new Ship4();let ship5 = new Ship5();let ship6 = new Ship6();
-let ship7 = new Ship7();let ship8 = new Ship8();let ship9 = new Ship9();
-let ship10 = new Ship10();let ship11 = new Ship11();let ship12 = new Ship12();
+let shipType = [,
+    new Ship1,
+    new Ship2,
+    new Ship3,
+    new Ship4,
+    new Ship5,
+    new Ship6,
+    new Ship7,
+    new Ship8,
+    new Ship9,
+    new Ship10,
+    new Ship11,
+    new Ship12
+];
 
