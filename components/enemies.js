@@ -1,5 +1,5 @@
 let enemies = [];
-let enemiesB = [];
+let eBullets = [];
 
 class Enemy{
     constructor(x, y, hp, bd, dmg, rld, alive, type, bType){
@@ -35,17 +35,24 @@ class Enemy{
 }
 
 class EnemyBullet{
-    constructor(x, y, w, h, dmg, alive, type){
+    constructor(x, y, w, h, dmg, rld, alive, type){
         this.x = x;
         this.y = y;
         this.w = w;
         this.h = h;
         this.dmg = dmg;
+        this.rld = rld;
         this.alive = alive;
         this.type = type;
     }
 
     draw(){
         bulletType[type].draw(this.x, this.y, this.w, this.h)
+    }
+
+    update(){
+        if(this.rld <= 0 && littlemenu.includes("level")){
+            
+        }
     }
 }
