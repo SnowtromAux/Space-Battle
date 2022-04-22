@@ -1,3 +1,4 @@
+let pBullets = [];
 class Player{
     constructor(){
         this.gameHp = 0;
@@ -25,8 +26,9 @@ class Player{
     }
 
     shoot(){
+        if(player.gameRld > 0)player.gameRld -= 0.5;
         if(this.gameRld <= 0 && mousePress == true && littlemenu.includes("level")){
-            bullets.push(new ShotBullet(shipX + 35, shipY - 10, this.bullet, this.dmg, 0));    
+            pBullets.push(new ShotBullet(shipX + 35, shipY - 10, this.bullet, this.dmg, 0));    
             this.gameRld = this.rld;
         }
     }

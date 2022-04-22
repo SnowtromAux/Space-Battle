@@ -113,8 +113,8 @@ function drawLevel(index){
         context.fillStyle = "blue";
         context.fillRect(shipX , shipY + 125, (player.rld - player.gameRld)/player.rld * 100 - 2, 3);
 
-        for(i = 0;i < bullets.length;i++){
-            bullets[i].draw();
+        for(i = 0;i < pBullets.length;i++){
+            pBullets[i].draw();
         }
     }
 

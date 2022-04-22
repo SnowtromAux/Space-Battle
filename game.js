@@ -1,7 +1,5 @@
 let counter = 0, timer = 0;
 
-let bullets = [];
-
 //Upgrade Variables
 let hpLvl = 0, bdLvl = 0, rldLvl = 0, attLvl = 0, mnyLvl = 0, penLvl = 0;
 
@@ -13,10 +11,10 @@ let completedLvl = [true , false, false, false, false, false, false, false, fals
 
 //Creating variables for powerups
 let hpBonus = [0 , 20, 50, 100, 150, 200, 400, 650, 1000, 1400, 2000], 
-bdBonus = [0, 10, 20, 40, 60, 80, 100, 150, 200, 300, 400],
-attBonus = [0, 20, 40, 60, 80, 100, 150, 200, 250, 300, 400], 
-rldBonus = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10],
-mnyBonus = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+    bdBonus = [0, 10, 20, 40, 60, 80, 100, 150, 200, 300, 400],
+    attBonus = [0, 20, 40, 60, 80, 100, 150, 200, 250, 300, 400], 
+    rldBonus = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10],
+    mnyBonus = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
 
 
 //Menu Variable
