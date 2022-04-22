@@ -18,8 +18,8 @@ function drawBullets(){
 
 
         context.fillStyle = "orange";
-        bulletType[pBullet].draw(40, 60, 160, 155);
-        context.fillText(`Attack: ${bulletType[pBullet].dmg}` , 25, 250);
+        bulletType[player.bullet].draw(40, 60, 160, 155);
+        context.fillText(`Attack: ${bulletType[player.bullet].dmg}` , 25, 250);
 
 
         drawImage(sign, 450, -10, 150, 130);
@@ -29,7 +29,7 @@ function drawBullets(){
 
 
         //Bullet buying fields
-        for(let i = 1;i <= 19;i++){
+        for(let i = 1;i <= bulletCount;i++){
             if(bulletType[i].owned)context.fillStyle = "green";
             else context.fillStyle = "red";
             
@@ -158,12 +158,12 @@ function drawBullets(){
 
         context.fillStyle = "white";
         context.font="italic small-caps 62px arial";
-        context.fillText(pMoney, 120, 560);
+        context.fillText(player.money, 120, 560);
 
 
 
 
-        for(let i = 1;i <= 19;i++){
+        for(let i = 1;i <= bulletCount;i++){
             if(littlemenu == `bullet_card_${i}`){
                 context.fillStyle = "purple";
                 context.fillRect(300, 40, 470, 520);

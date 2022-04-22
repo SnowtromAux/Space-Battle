@@ -1,8 +1,6 @@
-//Player equipments
-let pShip = 1, pBullet = 1, pMoney = 1000000, pReload = 0;
 let counter = 0, timer = 0;
 
-let bullets = [], bulletX = [], bulletY = [];
+let bullets = [];
 
 //Upgrade Variables
 let hpLvl = 0, bdLvl = 0, rldLvl = 0, attLvl = 0, mnyLvl = 0, penLvl = 0;
@@ -20,7 +18,6 @@ attBonus = [0, 20, 40, 60, 80, 100, 150, 200, 250, 300, 400],
 rldBonus = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10],
 mnyBonus = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
 
-let totalhp = 0, totalbd = 0, totalatt = 0, totalrld = 0, totalmny = 0;
 
 //Menu Variable
 let menu = "start", littlemenu = "nothing";
@@ -30,15 +27,12 @@ let mousePress = false;
 
 function update(){
 
-    updatePlayer();
+    player.update();
 
     for(let i = 1; i <= 15;i++){
         if(menu == `level${i}` && littlemenu != "pause"){
             updateLevel(i);
-
-            if(pReload <= 0 && mousePress == true && littlemenu.includes("level")){
-                shoot();
-            }
+            player.shoot();
         }
     }
 

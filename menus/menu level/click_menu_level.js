@@ -7,8 +7,6 @@ function levelsClick(index){
 
             while(bullets.length > 0){
                 bullets.pop();
-                bulletX.pop();
-                bulletY.pop();
             }
 
             littlemenu = "nothing";
@@ -27,8 +25,6 @@ function levelsClick(index){
         if(checkIfClicked(mouseX ,mouseY, 490, 300, 30)){
             while(bullets.length > 0){
                 bullets.pop();
-                bulletX.pop();
-                bulletY.pop();
             }
             
             songLvl[index] = sound(songs[index]);
