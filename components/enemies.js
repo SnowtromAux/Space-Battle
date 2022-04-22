@@ -1,48 +1,51 @@
 let enemies = [];
-let enemiesX = [], enemiesY = [];
-let enemiesB = [], enemiesBX = [], enemiesBY = [];
+let enemiesB = [];
 
-
-
-class Enemy1{
-    constructor(hp, bd, dmg, rld, alive){
+class Enemy{
+    constructor(x, y, hp, bd, dmg, rld, alive, type, bType){
+        this.x = x;
+        this.y = y;
         this.hp = hp;
         this.bd = bd;
         this.dmg = dmg;
         this.rld = rld;
         this.alive = alive;
+        this.type = type;
+        this.bType = bType;
+        this.w = 50;
+        this.h = 50;
     }
 
-    draw(x, y, w, h, rotate){
+    draw(rotate){
         switch(rotate){
-            case 1: drawImage(spaceship[0], x, y, w, h);break;
+            case 0: drawImage(spaceship[this.type], this.x, this.y, this.w, this.h);break;
 
-            case 2: drawImage(spaceship[9], x, y, w, h);break;
+            case 90: drawImage(spaceship[this.type + 9], this.x, this.y, this.w, this.h);break;
                 
-            case 3: drawImage(spaceship2[18], x, y, w, h);break;
+            case -90: drawImage(spaceship[this.type + 18], this.x, this.y, this.w, this.h);break;
+        }
+    }
+
+    shoot(){
+        if(this.rld <= 0){
+            enemiesB.push(new EnemyBullet(this.x, this.y, this.w, this.h, this.dmg, true, this.bType));
         }
     }
 
 }
 
-
-class Enemy2{
-    constructor(hp, bd, dmg, rld, alive){
-        this.hp = hp;
-        this.bd = bd;
+class EnemyBullet{
+    constructor(x, y, w, h, dmg, alive, type){
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
         this.dmg = dmg;
-        this.rld = rld;
         this.alive = alive;
+        this.type = type;
     }
 
-    draw(x, y, w, h, rotate){
-        switch(rotate){
-            case 1: drawImage(spaceship[1], x, y, w, h);break;
-
-            case 2: drawImage(spaceship1[10], x, y, w, h);break;
-                
-            case 3: drawImage(spaceship2[19], x, y, w, h);break;
-        }
+    draw(){
+        bulletType[type].draw(this.x, this.y, this.w, this.h)
     }
-
 }
