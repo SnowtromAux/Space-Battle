@@ -1,210 +1,32 @@
-//Ship classes
-class Ship1{
-    constructor(){
-        this.hp = 15;
-        this.bd = 0;
-        this.att = 5;
-        this.rld = 50;
-        this.mny = 0;
-        this.cost = 0;
-        this.owned = true;
+let shipCount = 12;
+
+let shipHp = [0, 15, 35, 70, 170, 300, 500, 700, 1000, 1300, 1500, 2000, 3000],
+    shipBd = [0, 0, 5, 10, 25, 45, 100, 150, 200, 250, 300, 400, 500],
+    shipAtt = [0, 5, 10, 20, 45, 100, 150, 200, 250, 300, 350, 400, 500],
+    shipRld = [0, 50, 45, 41, 38, 35, 32, 30, 28, 26, 24, 22, 20],
+    shipMny = [0, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 100],
+    shipCost = [0, 0, 300, 500, 1000, 1500, 2000, 3000, 4000, 5000, 6000, 7500, 10000],
+    shipOwned = [true, true, false, false, false, false, false, false, false, false, false, false, false];
+class PlayerShip{
+    constructor(hp, bd, att, rld, mny, cost, owned, type){
+        this.hp = hp;
+        this.bd = bd;
+        this.att = att;
+        this.rld = rld;
+        this.mny = mny;
+        this.cost = cost;
+        this.owned = owned;
+        this.type = type;
     }
 
     draw(x, y, w, h){
-        drawImage(playerShip1_blue, x, y, w, h);
-    }
-}
-
-class Ship2{
-    constructor(){
-        this.hp = 35;
-        this.bd = 5;
-        this.att = 10;
-        this.rld = 45;
-        this.mny = 10;
-        this.cost = 300;
-        this.owned = false;
-    }
-
-    draw(x, y, w, h){
-        drawImage(playerShip1_green, x, y, w, h)
-    }
-}
-
-class Ship3{
-    constructor(){
-        this.hp = 70;
-        this.bd = 10;
-        this.att = 20;
-        this.rld = 41;
-        this.mny = 20;
-        this.cost = 500;
-        this.owned = false;
-    }
-
-    draw(x, y, w, h){
-        drawImage(playerShip1_orange, x, y, w, h)
-    }
-}
-
-class Ship4{
-    constructor(){
-        this.hp = 150;
-        this.bd = 20;
-        this.att = 45;
-        this.rld = 38;
-        this.mny = 30;
-        this.cost = 1000;
-        this.owned = false;
-    }
-
-    draw(x, y, w, h){
-        drawImage(playerShip1_red, x, y, w, h)
-    }
-}
-
-class Ship5{
-    constructor(){
-        this.hp = 300;
-        this.bd = 45;
-        this.att = 100;
-        this.rld = 35;
-        this.mny = 40;
-        this.cost = 1500;
-        this.owned = false;
-    }
-
-    draw(x, y, w, h){
-        drawImage(playerShip2_blue, x, y, w, h)
-    }
-}
-
-class Ship6{
-    constructor(){
-        this.hp = 500;
-        this.bd = 100;
-        this.att = 150;
-        this.rld = 32;
-        this.mny = 50;
-        this.cost = 2000;
-        this.owned = false;
-    }
-
-    draw(x, y, w, h){
-        drawImage(playerShip2_green, x, y, w, h)
-    }
-}
-
-class Ship7{
-    constructor(){
-        this.hp = 700;
-        this.bd = 150;
-        this.att = 200;
-        this.rld = 30;
-        this.mny = 60;
-        this.cost = 3000;
-        this.owned = false;
-    }
-
-    draw(x, y, w, h){
-        drawImage(playerShip2_orange, x, y, w, h)
-    }
-}
-
-class Ship8{
-    constructor(){
-        this.hp = 1000;
-        this.bd = 200;
-        this.att = 250;
-        this.rld = 28;
-        this.mny = 70;
-        this.cost = 4000;
-        this.owned = false;
-    }
-
-    draw(x, y, w, h){
-        drawImage(playerShip2_red, x, y, w, h)
-    }
-}
-
-class Ship9{
-    constructor(){
-        this.hp = 1300;
-        this.bd = 250;
-        this.att = 300;
-        this.rld = 26;
-        this.mny = 80;
-        this.cost = 5000;
-        this.owned = false;
-    }
-
-    draw(x, y, w, h){
-        drawImage(playerShip3_blue, x, y, w, h)
-    }
-}
-
-class Ship10{
-    constructor(){
-        this.hp = 1500;
-        this.bd = 300;
-        this.att = 350;
-        this.rld = 24;
-        this.mny = 90;
-        this.cost = 6000;
-        this.owned = false;
-    }
-
-    draw(x, y, w, h){
-        drawImage(playerShip3_green, x, y, w, h)
-    }
-}
-
-class Ship11{
-    constructor(){
-        this.hp = 2000;
-        this.bd = 400;
-        this.att = 400;
-        this.rld = 22;
-        this.mny = 95;
-        this.cost = 7500;
-        this.owned = false;
-    }
-
-    draw(x, y, w, h){
-        drawImage(playerShip3_orange, x, y, w, h)
+        drawImage(playerShip[this.type - 1], x, y, w, h);
     }
 }
 
 
-class Ship12{
-    constructor(){
-        this.hp = 3000;
-        this.bd = 500;
-        this.att = 500;
-        this.rld = 20;
-        this.mny = 100;
-        this.cost = 10000;
-        this.owned = false;
-    }
+let shipType = [];
 
-    draw(x, y, w, h){
-        drawImage(playerShip3_red, x, y, w, h)
-    }
+for(let i = 0;i <= shipCount;i++){
+    shipType.push(new PlayerShip(shipHp[i], shipBd[i], shipAtt[i], shipRld[i], shipMny[i], shipCost[i], shipOwned[i], i));
 }
-
-//Ship Variable making
-let shipType = [,
-    new Ship1,
-    new Ship2,
-    new Ship3,
-    new Ship4,
-    new Ship5,
-    new Ship6,
-    new Ship7,
-    new Ship8,
-    new Ship9,
-    new Ship10,
-    new Ship11,
-    new Ship12
-];
-

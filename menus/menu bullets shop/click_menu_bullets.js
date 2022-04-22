@@ -142,19 +142,19 @@ function clickBullets(){
 
         }
 
-        for(let i = 1;i <= 19;i++){
+        for(let i = 1;i <= bulletCount;i++){
             if(littlemenu == `bullet_card_${i}`){
                 //Buy button
-                if(mouseX >= 350 && mouseX <= 500 && mouseY >= 490 && mouseY <= 540 && pMoney >= bulletType[i].cost && bulletType[i].owned == false){
+                if(mouseX >= 350 && mouseX <= 500 && mouseY >= 490 && mouseY <= 540 && player.money >= bulletType[i].cost && bulletType[i].owned == false){
                     bulletType[i].owned = true;
-                    pBullet = i;
-                    pMoney -= bulletType[i].cost;
+                    player.bullet = i;
+                    player.money -= bulletType[i].cost;
                 }
         
         
                 //Select button
                 if(mouseX >= 350 && mouseX <= 500 && mouseY >= 490 && mouseY <= 540 && bulletType[i].owned == true){
-                    pBullet = i;
+                    player.bullet = i;
                 }
         
         

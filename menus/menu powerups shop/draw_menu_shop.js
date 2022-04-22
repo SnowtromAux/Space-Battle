@@ -135,7 +135,7 @@ function drawShop(){
         context.fillStyle = "purple";
         context.fillRect(540, 30, 200, 200);
         
-        shipType[pShip].draw(540, 30, 200, 200);
+        shipType[player.ship].draw(540, 30, 200, 200);
 
 
         //Player Bullet
@@ -147,7 +147,7 @@ function drawShop(){
         context.fillStyle = "purple";
         context.fillRect(540, 280, 200, 200);
 
-        bulletType[pBullet].draw(540, 280, 200, 200)
+        bulletType[player.bullet].draw(540, 280, 200, 200)
 
         //Back Button
         context.fillStyle = "purple";
@@ -167,7 +167,7 @@ function drawShop(){
 
         context.fillStyle = "white";
         context.font="italic small-caps 62px arial";
-        context.fillText(pMoney, 110, 578);
+        context.fillText(player.money, 110, 578);
         
     }
 }

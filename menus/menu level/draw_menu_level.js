@@ -34,7 +34,7 @@ function drawLevel(index){
     
     if(littlemenu == "warmup"){
         earnedmny = 0;
-        shipType[pShip].draw(350, 380, 100, 100);
+        shipType[player.ship].draw(350, 380, 100, 100);
                     
         context.fillStyle = "red";
         context.fillRect(350 , 490,  100, 13);
@@ -42,16 +42,16 @@ function drawLevel(index){
         context.fillStyle = "white";
         context.font="italic small-caps bold 13px arial";
 
-        if(totalhp - takenDmg < 100){
-            context.fillText(`${totalhp - takenDmg}`, 389, 502);
+        if(player.gameHp < 100){
+            context.fillText(`${player.gameHp}`, 389, 502);
         }
         
-        if(totalhp - takenDmg < 1000 && totalhp - takenDmg >= 100){
-            context.fillText(`${totalhp - takenDmg}`, 387, 502);
+        if(player.gameHp < 1000 && player.gameHp >= 100){
+            context.fillText(`${player.gameHp}`, 387, 502);
         }
     
-        if(totalhp - takenDmg < 10000 && totalhp - takenDmg >= 1000){
-            context.fillText(`${totalhp - takenDmg}`, 384, 502);
+        if(player.gameHp < 10000 && player.gameHp >= 1000){
+            context.fillText(`${player.gameHp}`, 384, 502);
         }
 
         context.font="italic small-caps bold 100px arial";
@@ -84,37 +84,37 @@ function drawLevel(index){
         else if(mouseY > 472) shipY = 422;
         else shipY = mouseY - 50;
 
-        shipType[pShip].draw(shipX, shipY, 100, 100);
+        player.draw(shipX, shipY, 100, 100);
         
-        if(takenDmg > totalhp)takenDmg = totalhp;
+        if(player.gameHp <= 0)player.gameHp = 0;
         
 
         //Hp bar
         context.fillStyle = "red";
-        context.fillRect(shipX, shipY + 110, ((totalhp - takenDmg) / totalhp) * 100, 13);
+        context.fillRect(shipX, shipY + 110, (player.gameHp / player.hp) * 100, 13);
         
         context.fillStyle = "white";
         context.font="italic small-caps bold 13px arial";
 
-        if(totalhp - takenDmg < 100){
-            context.fillText(`${totalhp - takenDmg}`, shipX + 39, shipY + 122);
+        if(player.gameHp < 100){
+            context.fillText(`${player.gameHp}`, shipX + 39, shipY + 122);
         }
         
-        if(totalhp - takenDmg < 1000 && totalhp - takenDmg >= 100){
-            context.fillText(`${totalhp - takenDmg}`, shipX + 37, shipY + 122);
+        if(player.gameHp < 1000 && player.gameHp >= 100){
+            context.fillText(`${player.gameHp}`, shipX + 37, shipY + 122);
         }
     
-        if(totalhp - takenDmg < 10000 && totalhp - takenDmg >= 1000){
-            context.fillText(`${totalhp - takenDmg}`, shipX + 34, shipY + 122);
+        if(player.gameHp < 10000 && player.gameHp >= 1000){
+            context.fillText(`${player.gameHp}`, shipX + 34, shipY + 122);
         }
 
 
         //Reload bar
         context.fillStyle = "blue";
-        context.fillRect(shipX , shipY + 125, (totalrld - pReload)/totalrld * 100 - 2, 3);
+        context.fillRect(shipX , shipY + 125, (player.rld - player.gameRld)/player.rld * 100 - 2, 3);
 
         for(i = 0;i < bullets.length;i++){
-            bullets[i].draw(bulletX[i], bulletY[i], 30, 30);
+            bullets[i].draw();
         }
     }
 

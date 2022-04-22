@@ -14,8 +14,8 @@ function clickShop(){
         
     //Upgrading health:
     if(mouseX >= 355 && mouseX <= 495 && mouseY >= 15 && mouseY <= 65){   
-        if(pMoney >= powerupCost[hpLvl]){
-            pMoney -= powerupCost[hpLvl];
+        if(player.money >= powerupCost[hpLvl]){
+            player.money -= powerupCost[hpLvl];
             hpLvl++;
         }else if(hpLvl == 10){
 
@@ -26,8 +26,8 @@ function clickShop(){
         
     //Upgrading body damage:
     if(mouseX >= 355 && mouseX <= 495 && mouseY >= 119 && mouseY <= 169){
-        if(pMoney >= powerupCost[bdLvl]){
-            pMoney -= powerupCost[bdLvl];
+        if(player.money >= powerupCost[bdLvl]){
+            player.money-= powerupCost[bdLvl];
             bdLvl++;
         }else if(bdLvl == 10){
 
@@ -38,8 +38,8 @@ function clickShop(){
 
     //Upgrading attack damage:
     if(mouseX >= 355 && mouseX <= 495 && mouseY >= 219 && mouseY <= 269){
-        if(pMoney >= powerupCost[attLvl]){
-            pMoney -= powerupCost[attLvl];
+        if(player.money >= powerupCost[attLvl]){
+            player.money -= powerupCost[attLvl];
             attLvl++;
         }else if(attLvl == 10){
 
@@ -50,8 +50,8 @@ function clickShop(){
 
     //Upgrading reload:
     if(mouseX >= 355 && mouseX <= 495 && mouseY >= 323 && mouseY <= 373){
-        if(pMoney >= powerupCost[rldLvl]){
-            pMoney -= powerupCost[rldLvl];
+        if(player.money >= powerupCost[rldLvl]){
+            player.money -= powerupCost[rldLvl];
             rldLvl++;
         }else if(rldLvl == 10){
 
@@ -62,8 +62,8 @@ function clickShop(){
 
     //Upgrading money gathering
     if(mouseX >= 355 && mouseX <= 495 && mouseY >= 427 && mouseY <= 477){
-        if(pMoney >= powerupCost[mnyLvl]){
-            pMoney -= powerupCost[mnyLvl];
+        if(player.money >= powerupCost[mnyLvl]){
+            player.money -= powerupCost[mnyLvl];
             mnyLvl++;
         }else if(mnyLvl == 10){
 

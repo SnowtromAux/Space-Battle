@@ -16,6 +16,8 @@ function clickLevels(){
             let oX = + 100 + + 150 * ((i - 1) % 5);
             let oY = + 105 + + 150 * (Math.floor((i - 1) / 5));
             if(checkIfClicked(mouseX, mouseY, oX, oY, 50) && completedLvl[i-1] === true){
+                player.gameHp = player.hp;
+                player.gameRld = 0;
                 warmupStarted = false;
                 menu = `level${i}`;
                 littlemenu = "warmup";

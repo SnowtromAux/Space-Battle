@@ -11,17 +11,12 @@ function updateLevel(index){
         littlemenu = "pause";
     }
 
-    if(pReload > 0)pReload -= 0.5;
+    if(player.gameRld > 0)player.gameRld -= 0.5;
 
     for(i = 0;i < bullets.length;i++){
-        bulletY[i]-=3;
-        if(bulletY[i] <= -10){
-            bulletY[i] = bulletY[bullets.length - 1];
-            bulletX[i] = bulletX[bullets.length - 1];
+        bullets[i].y-=3;
+        if(bullets[i].y <= -10){
             bullets[i] = bullets[bullets.length - 1];
-
-            bulletY.pop();
-            bulletX.pop();
             bullets.pop();
         }
     }

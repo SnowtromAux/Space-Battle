@@ -11,7 +11,7 @@ function drawShips(){
         context.strokeStyle = "purple";
         context.strokeRect(20, 20, 250, 560);
 
-        shipType[pShip].draw(70, 80, 150, 150);
+        shipType[player.ship].draw(70, 80, 150, 150);
 
         context.fillStyle = "white";
         context.font="italic small-caps bold 40px arial";
@@ -23,23 +23,23 @@ function drawShips(){
         
         //health drawing
         context.fillStyle = "pink";
-        context.fillText(`Health: ${totalhp}` , 40, 280);
+        context.fillText(`Health: ${player.hp}` , 40, 280);
 
         //body damage drawing
         context.fillStyle = "red";
-        context.fillText(`B.DMG: ${totalbd}` , 40, 340);
+        context.fillText(`B.DMG: ${player.bd}` , 40, 340);
 
         //attack drawing
         context.fillStyle = "orange";
-        context.fillText(`Attack: ${totalatt}` , 40, 400);
+        context.fillText(`Attack: ${player.att}` , 40, 400);
 
         //reload drawing
         context.fillStyle = "green";
-        context.fillText(`Reload: ${totalrld}` , 40, 460);
+        context.fillText(`Reload: ${player.rld}` , 40, 460);
 
         //earnings drawing
         context.fillStyle = "yellow";
-        context.fillText(`Earning: ${totalmny}%` , 40, 520);
+        context.fillText(`Earning: ${player.mny}%` , 40, 520);
 
         
 
@@ -52,7 +52,7 @@ function drawShips(){
         
         
 
-        for(let i = 1;i <= 12;i++){
+        for(let i = 1;i <= shipCount;i++){
             if(shipType[i].owned)context.fillStyle = "green";
             else context.fillStyle = "red";
 
@@ -75,7 +75,7 @@ function drawShips(){
         context.fillText(`Back <<<` , 630, 580);
 
 
-        for(let i = 1;i <= 12;i++){
+        for(let i = 1;i <= shipCount;i++){
             if(littlemenu == `ship${i}_card`){
                 context.fillStyle = "purple";
                 context.fillRect(300, 40, 470, 520);
