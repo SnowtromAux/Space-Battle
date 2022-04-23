@@ -38,4 +38,34 @@ class ShotBullet{
     draw(){
         drawImage(missile[this.type - 1], this.x, this.y, this.w, this.h);
     }
+
+    update(index){            
+        this.y -= 3;
+            
+        if(this.y <= -30){
+            pBullets[index] = pBullets[pBullets.length - 1];
+            pBullets.pop();
+        }
+
+        for(let j = 0;j < enemies.length;j++){
+            if(areColliding(this.x, 
+                            this.y, 
+                            this.w, 
+                            this.h,
+                            enemies[j].x, 
+                            enemies[j].y, 
+                            enemies[j].w, 
+                            enemies[j].h)){
+
+                enemies[j].hp -= player.att;
+                pBullets[index] = pBullets[pBullets.length - 1];
+                pBullets.pop();
+                
+                if(enemies[j].hp <= 0){
+                    enemies[j] = enemies[enemies.length - 1];
+                    enemies.pop();
+                }
+            }
+        }
+    }
 }

@@ -24,13 +24,20 @@ let menu = "start", littlemenu = "nothing";
 let mousePress = false;
 
 function update(){
-
     player.update();
 
     for(let i = 1; i <= 15;i++){
-        if(menu == `level${i}` && littlemenu != "pause"){
+        if(menu == `level${i}` && littlemenu == `level${i}`){
             updateLevel(i);
-            player.shoot();
+            for(let j = 0;j < enemies.length;j++){
+                enemies[j].update(j);
+            }
+            for(let j = 0;j < pBullets.length;j++){
+                pBullets[j].update(j);
+            }
+            for(let j = 0;j < eBullets.length;j++){
+                eBullets[j].update();
+            }
         }
     }
 

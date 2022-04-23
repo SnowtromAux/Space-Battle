@@ -5,7 +5,6 @@ let timeLeft;
 let warmupStarted;
 let earnedmny;
 
-let shipX , shipY;
 
 function drawLevel(index){
 
@@ -76,46 +75,53 @@ function drawLevel(index){
     
     if(littlemenu == `level${index}`){
         
-        if(mouseX < 50) shipX = 0;
-        else if(mouseX > 750) shipX = 700;
-        else shipX = mouseX - 50;
+        if(mouseX < 50) player.x = 0;
+        else if(mouseX > 750) player.x = 700;
+        else player.x = mouseX - 50;
         
-        if(mouseY < 50) shipY = 0;
-        else if(mouseY > 472) shipY = 422;
-        else shipY = mouseY - 50;
+        if(mouseY < 50) player.y = 0;
+        else if(mouseY > 472) player.y = 422;
+        else player.y = mouseY - 50;
 
-        player.draw(shipX, shipY, 100, 100);
+        player.draw(player.x, player.y, 100, 100);
         
         if(player.gameHp <= 0)player.gameHp = 0;
         
 
         //Hp bar
         context.fillStyle = "red";
-        context.fillRect(shipX, shipY + 110, (player.gameHp / player.hp) * 100, 13);
+        context.fillRect(player.x, player.y + 110, (player.gameHp / player.hp) * 100, 13);
         
         context.fillStyle = "white";
         context.font="italic small-caps bold 13px arial";
 
         if(player.gameHp < 100){
-            context.fillText(`${player.gameHp}`, shipX + 39, shipY + 122);
+            context.fillText(`${player.gameHp}`, player.x + 39, player.y + 122);
         }
         
         if(player.gameHp < 1000 && player.gameHp >= 100){
-            context.fillText(`${player.gameHp}`, shipX + 37, shipY + 122);
+            context.fillText(`${player.gameHp}`, player.x + 37, player.y + 122);
         }
     
         if(player.gameHp < 10000 && player.gameHp >= 1000){
-            context.fillText(`${player.gameHp}`, shipX + 34, shipY + 122);
+            context.fillText(`${player.gameHp}`, player.x + 34, player.y + 122);
         }
 
+        for(let i = 0;i < enemies.length;i++){
+            enemies[i].draw();
+        }
+
+        for(let i = 0;i < pBullets.length;i++){
+            pBullets[i].draw();
+        }
+
+        for(let i = 0;i < eBullets.length;i++){
+            eBullets[i].draw();
+        }
 
         //Reload bar
         context.fillStyle = "blue";
-        context.fillRect(shipX , shipY + 125, (player.rld - player.gameRld)/player.rld * 100 - 2, 3);
-
-        for(i = 0;i < pBullets.length;i++){
-            pBullets[i].draw();
-        }
+        context.fillRect(player.x , player.y + 125, (player.rld - player.gameRld)/player.rld * 100 - 2, 3);
     }
 
     if(littlemenu == "pause"){
