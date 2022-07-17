@@ -1,5 +1,5 @@
 let counter = 0, timer = 0;
-
+let screenWidth , screenHeight;
 //Upgrade Variables
 let hpLvl = 0, bdLvl = 0, rldLvl = 0, attLvl = 0, mnyLvl = 0, penLvl = 0;
 
@@ -21,9 +21,11 @@ let hpBonus = [0 , 20, 50, 100, 150, 200, 400, 650, 1000, 1400, 2000],
 let menu = "start", littlemenu = "nothing";
 
 //Mousedown
-let mousePress = false;
+let mousePress = false, mouseClick = false;
 
 function update(){
+    screenWidth = window.innerWidth;
+    screenHeight = window.innerHeight;
     player.update();
 
     for(let i = 1; i <= 15;i++){
@@ -49,7 +51,6 @@ function update(){
 }
 
 function draw() {
-
     switch(menu){
         case "start": 
             drawStart();
@@ -76,6 +77,7 @@ function draw() {
 };
 
 function mouseup() {
+    if(mouseClick === false)mouseClick = true;
     mousePress = false;
     switch(menu){
         case "start": 
@@ -101,8 +103,11 @@ function mouseup() {
             levelsClick(i);
         }
     }
+
+    if(mouseClick === true)mouseClick = undefined;
 };
 
 function mousedown(){
+    if(mouseClick === undefined)mouseClick = false;
     mousePress = true;
 };

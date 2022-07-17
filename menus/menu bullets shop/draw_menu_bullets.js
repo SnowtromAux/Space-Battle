@@ -1,155 +1,91 @@
+let bulletRectangle = new Button("#880E4F", "black", 5, 55, 50, 310, 300, "Your Bullet", "white", "", "", "bold", 30, "arial", 85, true);
+let bulletStatsRectangle = new Button("#4A148C", "black", 5, 55, 345, 310, 50, `Damage: ${5}` , "orange", "", "", "bold", 30, "arial", 382, true);
+
+let ammoButton = [
+    "",
+    new Button("green", "black", 5, 395, 255, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 565, 255, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 735, 255, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 905, 255, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 1075, 255, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 1245, 255, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 55, 425, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 225, 425, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 395, 425, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 565, 425, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 735, 425, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 905, 425, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 1075, 425, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 1245, 425, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 55, 595, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 225, 595, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 395, 595, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 565, 595, 140, 140, "" , "", "", "", "", 0, "", 0, true),
+    new Button("red", "black", 5, 735, 595, 140, 140, "" , "", "", "", "", 0, "", 0, true)
+];
+
+
+
+let bulletsBackButton = new Button("purple", "black", 5, 980, 620, 300, 100, "Back", "white", "italic", "small-caps", "bold", 60, "arial", 690, true); 
+
+let bulletCard = new Button("purple", "black", 5, 300, 40, 470, 520, ``, "blue", "italic", "small-caps", "bold", 60, "arial", 100, true);
+let bulletCardBuyButton = new Button("green", "black", 5, 350, 490, 150, 50, `Buy`, "blue", "italic", "small-caps", "bold", 60, "arial", 528, true);
+let bulletCardSelectButton = new Button("green", "black", 5, 350, 490, 150, 50, `Select`, "blue", "italic", "small-caps", "bold", 60, "arial", 528, true);
+let bulletCardBackButton = new Button("green", "black", 5, 600, 490, 150, 50, `Back`, "blue", "italic", "small-caps", "bold", 60, "arial", 528, true);
+let textCard = ["", "Clement", "Rimfire", "22BB", "Tokarev", "Remington Rimfire", "22CB", "Bergmann", "Magnum Rimfire", "22LR", 
+                "Power - Mag", "Cor - Bon", "Action Express", "Remington Magnum", "Super magnum", "Winchester Magnum", "Wildy Magnum",
+                "Tranter", "Marlin", "Avenger"];
+
+let selectedSlot;
 function drawBullets(){
     if(menu == "bullets"){
-        drawImage(backStars, 0, 0, 800, 600);
+        switch(shipType[player.ship].curSlot){
+            case 1:
+                selectedSlot = shipType[player.ship].slot1;
+                break; 
+            case 2:
+                selectedSlot = shipType[player.ship].slot2;
+                break;
+            case 3:
+                selectedSlot = shipType[player.ship].slot3;
+                break;
+        }
+        drawImage(backStars, 0, 0, 1600, 1200);
 
-        context.fillStyle = "#880E4F"; 
-        context.strokeStyle = "black";
-        context.fillRect(20, 20, 200, 200);
-        context.strokeRect(20, 20, 200, 200);
+        bulletRectangle.draw();
+        bulletStatsRectangle.draw();
 
-        context.fillStyle = "#4A148C";
-        context.fillRect(20, 220, 199, 40);
+        bulletType[selectedSlot].draw(100, 110, 220, 220);
 
-
-        context.font="italic small-caps bold 30px arial";
-
+        drawImage(sign, 700, -20, 200, 200);
         context.fillStyle = "white";
-        context.fillText(`Your Bullet` , 25, 55);
+        context.font="italic small-caps bold 55px arial";
+        context.fillText(`Bullets` , 705, 115);
 
+        bulletsBackButton.draw();
 
-        context.fillStyle = "orange";
-        bulletType[player.bullet].draw(40, 60, 160, 155);
-        context.fillText(`Attack: ${bulletType[player.bullet].dmg}` , 25, 250);
-
-
-        drawImage(sign, 450, -10, 150, 130);
-        context.fillStyle = "white";
-        context.font="italic small-caps bold 40px arial";
-        context.fillText(`Bullet` , 453, 80);
 
 
         //Bullet buying fields
         for(let i = 1;i <= bulletCount;i++){
-            if(bulletType[i].owned)context.fillStyle = "green";
-            else context.fillStyle = "red";
-            
-
-            switch(i){
-                case 1:
-                    context.fillRect(242, 170, 90, 90);
-                    bulletType[1].draw(242, 170, 90, 90);
-                    break;
-
-                case 2:
-                    context.fillRect(353, 170, 90, 90);
-                    bulletType[2].draw(353, 170, 90, 90);
-                    break;
-                
-                case 3:
-                    context.fillRect(464, 170, 90, 90);
-                    bulletType[3].draw(464, 170, 90, 90);
-                    break;
-                
-                case 4:
-                    context.fillRect(575, 170, 90, 90);
-                    bulletType[4].draw(575, 170, 90, 90);
-                    break;
-
-                case 5:
-                    context.fillRect(686, 170, 90, 90);
-                    bulletType[5].draw(686, 170, 90, 90);
-                    break;
-
-                case 6:
-                    context.fillRect(20, 280, 90, 90);
-                    bulletType[6].draw(20, 280, 90, 90);
-                    break;
-
-                case 7:
-                    context.fillRect(130, 280, 90, 90);
-                    bulletType[7].draw(130, 280, 90, 90);
-                    break;
-
-                case 8:
-                    context.fillRect(241, 280, 90, 90);
-                    bulletType[8].draw(241, 280, 90, 90);
-                    break;
-                
-                case 9:
-                    context.fillRect(352, 280, 90, 90);
-                    bulletType[9].draw(352, 280, 90, 90);
-                    break;
-
-                case 10:
-                    context.fillRect(463, 280, 90, 90);
-                    bulletType[10].draw(463, 280, 90, 90);
-                    break;
-
-                case 11:
-                    context.fillRect(574, 280, 90, 90);
-                    bulletType[11].draw(574, 280, 90, 90);
-                    break;
-
-                case 12:
-                    context.fillRect(685, 280, 90, 90);
-                    bulletType[12].draw(685, 280, 90, 90);
-                    break;
-
-                case 13:
-                    context.fillRect(20, 390, 90, 90);
-                    bulletType[13].draw(20, 390, 90, 90);
-                    break;
-
-                case 14:
-                    context.fillRect(130, 390, 90, 90);
-                    bulletType[14].draw(130, 390, 90, 90);
-                    break;
-
-                case 15:
-                    context.fillRect(241, 390, 90, 90);
-                    bulletType[15].draw(241, 390, 90, 90);
-                    break;
-
-                case 16:
-                    context.fillRect(353, 390, 90, 90);
-                    bulletType[16].draw(353, 390, 90, 90);
-                    break;
-
-                case 17:
-                    context.fillRect(464, 390, 90, 90);
-                    bulletType[17].draw(464, 390, 90, 90);
-                    break;
-
-                case 18:
-                    context.fillRect(575, 390, 90, 90);
-                    bulletType[18].draw(575, 390, 90, 90);
-                    break;
-                
-                case 19:
-                    context.fillRect(686, 390, 90, 90);
-                    bulletType[19].draw(686, 390, 90, 90);
-                    break;
+            if(shipType[player.ship].bNum == 2){
+                if(shipType[player.ship].ownedPatrons[shipType[player.ship].curSlot - 2][i])ammoButton[i].color = "green";
+                else ammoButton[i].color = "red";
+            }else{
+                if(shipType[player.ship].ownedPatrons[shipType[player.ship].curSlot - 1][i])ammoButton[i].color = "green";  
+                else ammoButton[i].color = "red";
             }
+    
+            ammoButton[i].draw();
+            bulletType[i].draw(ammoButton[i].x + 20, ammoButton[i].y + 20, ammoButton[i].w - 40, ammoButton[i].h - 40);
+         
         }
 
 
 
 
-        //Back Button
-        context.fillStyle = "green";
-        context.fillRect(540, 510, 240, 50);
 
-        if(mouseX >= 540 && mouseX <= 780 && mouseY >= 510 && mouseY <= 560 && littlemenu == "nothing"){
-            context.fillStyle = "purple";
-        }else{
-            context.fillStyle = "white";
-        }
-
-        context.font="italic small-caps bold 50px arial";
-        context.fillText(`Back <<<` , 548, 551);
-
-
-        //Money
+        /*//Money
         drawImage(star, 20, 515, 50,50);
 
         context.fillStyle = "white";
@@ -158,121 +94,38 @@ function drawBullets(){
 
         context.fillStyle = "white";
         context.font="italic small-caps 62px arial";
-        context.fillText(player.money, 120, 560);
+        context.fillText(player.money, 120, 560);*/
 
 
-
+        
 
         for(let i = 1;i <= bulletCount;i++){
             if(littlemenu == `bullet_card_${i}`){
-                context.fillStyle = "purple";
-                context.fillRect(300, 40, 470, 520);
-
+                bulletCard.text = textCard[i];
+                bulletCard.draw();
                 bulletType[i].draw(320, 170, 180, 180);
             
                 context.fillStyle = "orange";
                 context.font="italic small-caps bold 50px arial";
                 context.fillText(`Attack: ${bulletType[i].dmg}` , 510, 290);
             
-    
-                context.fillStyle = "green";
-                context.fillRect(350, 490, 150, 50);
-                context.fillRect(600, 490, 150, 50);
-    
-                context.fillStyle = "white";
-                context.font="italic small-caps bold 40px arial";
-                context.fillText("Back", 625, 528);
+                if(shipType[player.ship].bNum == 2){
                 
-                if(bulletType[i].owned){
-                    context.fillText("Select", 355, 528);
+                    if(shipType[player.ship].ownedPatrons[shipType[player.ship].curSlot - 2][i]){
+                        bulletCardSelectButton.draw();
+                    }else{ 
+                        bulletCardBuyButton.draw();
+                        context.fillText(`Cost: ${bulletType[i].cost}`, 340, 390);
+                    }
                 }else{
-                    context.fillText("Buy", 388, 528);
-                    context.font="italic small-caps bold 30px arial";
-                    context.fillText(`Cost: ${bulletType[i].cost}`, 340, 390);
+                    if(shipType[player.ship].ownedPatrons[shipType[player.ship].curSlot - 1][i]){
+                        bulletCardSelectButton.draw();
+                    }else{
+                        bulletCardBuyButton.draw();
+                        context.fillText(`Cost: ${bulletType[i].cost}`, 340, 390);
+                    }
                 }
-
-                
-                context.fillStyle = "blue";
-
-                switch(i){
-                    case 1:
-                        context.font="italic small-caps bold 60px arial";
-                        context.fillText(`Clement` , 405, 110);
-                        break;
-                    case 2:
-                        context.font="italic small-caps bold 60px arial";
-                        context.fillText(`Rimfire` , 430, 110);
-                        break;
-                    case 3:
-                        context.font="italic small-caps bold 60px arial";
-                        context.fillText(`22BB` , 470, 110);
-                        break;
-                    case 4:
-                        context.font="italic small-caps bold 60px arial";
-                        context.fillText(`Tokarev` , 410, 110);
-                        break;
-                    case 5:
-                        context.font="italic small-caps bold 47px arial";
-                        context.fillText(`Remington Rimfire` , 315, 110);
-                        break;
-                    case 6:
-                        context.font="italic small-caps bold 60px arial";
-                        context.fillText(`22CB` , 470, 110);
-                        break;
-                    case 7:
-                        context.font="italic small-caps bold 60px arial";
-                        context.fillText(`Bergmann` , 390, 110);
-                        break;
-                    case 8:
-                        context.font="italic small-caps bold 55px arial";
-                        context.fillText(`Magnum Rimfire` , 310, 110);
-                        break;
-                    case 9:
-                        context.font="italic small-caps bold 60px arial";
-                        context.fillText(`22LR` , 470, 110);
-                        break;
-                    case 10:
-                        context.font="italic small-caps bold 60px arial";
-                        context.fillText(`Power-Mag` , 390, 110);
-                        break;
-                    case 11:
-                        context.font="italic small-caps bold 60px arial";
-                        context.fillText(`Cor - Bon` , 390, 110);
-                        break;
-                    case 12:
-                        context.font="italic small-caps bold 55px arial";
-                        context.fillText(`Action Express` , 325, 110);
-                        break;
-                    case 13:
-                        context.font="italic small-caps bold 46px arial";
-                        context.fillText(`Remington Magnum` , 310, 110);
-                        break;
-                    case 14:
-                        context.font="italic small-caps bold 55px arial";
-                        context.fillText(`Super magnum` , 335, 110);
-                        break;
-                    case 15:
-                        context.font="italic small-caps bold 45px arial";
-                        context.fillText(`Winchester Magnum` , 303, 110);
-                        break;
-                    case 16:
-                        context.font="italic small-caps bold 55px arial";
-                        context.fillText(`Wildy Magnum` , 333, 110);
-                        break;
-                    case 17:
-                        context.font="italic small-caps bold 60px arial";
-                        context.fillText(`Tranter` , 410, 110);
-                        break;
-                    case 18:
-                        context.font="italic small-caps bold 60px arial";
-                        context.fillText(`Marlin` , 430, 110);
-                        break;
-                    case 19:
-                        context.font="italic small-caps bold 60px arial";
-                        context.fillText(`Avenger` , 405, 110);
-                        break;
-
-                }
+                bulletCardBackButton.draw(); 
             }
         }
     }

@@ -11,7 +11,7 @@
     </style>
 </head>
     <body  onload="init()">
-	   <canvas id="canvas-id" width="800" height="600">
+	   <canvas id="canvas-id" width="1600" height="1200">
            <script>
             function areColliding(Ax, Ay, Awidth, Aheight, Bx, By, Bwidth, Bheight) {
                 if (Bx <= Ax + Awidth) {
@@ -64,6 +64,7 @@
 
                 <script src="components/sound.js"></script>
                 <script src="components/bullets.js"></script>
+                <script src="components/buttons.js"></script>
                 <script src="components/ships.js"></script>
                 <script src="components/player.js"></script>
                 <script src="components/enemies.js"></script>
@@ -104,8 +105,8 @@
                 };
             }
             else {
-                canvas.width = 800;
-                canvas.height = 600;
+                canvas.width = 1600;
+                canvas.height = 1200;
             }
             var context = canvas.getContext("2d");
             context.fillStyle = "#0000ff";

@@ -1,74 +1,81 @@
+
+
 function clickShop(){
-    if(mouseX >= 520 && mouseX <= 760 && mouseY >= 520 && mouseY <= 580){
+    if(ShopBackButton.click()){
         menu = "start";
     }
 
-    if(mouseX >= 538 && mouseX <= 742 && mouseY >= 278 && mouseY <= 492){
+    if(bulletButton_1.click()){
         menu = "bullets";
+        shipType[player.ship].curSlot = 1;
     }
 
-    if(mouseX >= 538 && mouseX <= 742 && mouseY >= 28 && mouseY <= 232){
+    if(bulletButton_2.click()){
+        menu = "bullets";
+        shipType[player.ship].curSlot = 2;
+    }
+
+    if(bulletButton_3.click()){
+        menu = "bullets";
+        shipType[player.ship].curSlot = 3;
+    }
+
+    if(shipButton.click()){
         menu = "ships";
     }
 
-        
-    //Upgrading health:
-    if(mouseX >= 355 && mouseX <= 495 && mouseY >= 15 && mouseY <= 65){   
+    if(hpButton.click()){
         if(player.money >= powerupCost[hpLvl]){
             player.money -= powerupCost[hpLvl];
             hpLvl++;
-        }else if(hpLvl == 10){
-
+            hpButton.text = `${powerupCost[hpLvl]}`;
+            if(hpLvl >= 10)hpButton.text = "MAX";
         }else{
             //izpisva not enough money
         }    
     }
-        
-    //Upgrading body damage:
-    if(mouseX >= 355 && mouseX <= 495 && mouseY >= 119 && mouseY <= 169){
+    
+    if(bdButton.click()){
         if(player.money >= powerupCost[bdLvl]){
             player.money-= powerupCost[bdLvl];
             bdLvl++;
-        }else if(bdLvl == 10){
-
+            bdButton.text = `${powerupCost[bdLvl]}`;
+            if(bdLvl >= 10)bdButton.text = "MAX";
         }else{
             //izpisva not enough money
         }    
     }
 
-    //Upgrading attack damage:
-    if(mouseX >= 355 && mouseX <= 495 && mouseY >= 219 && mouseY <= 269){
+    if(attButton.click()){
         if(player.money >= powerupCost[attLvl]){
             player.money -= powerupCost[attLvl];
             attLvl++;
-        }else if(attLvl == 10){
-
+            attButton.text = `${powerupCost[attLvl]}`
+            if(attLvl >= 10)attButton.text = "MAX";
         }else{
             //izpisva not enough money
         }    
     }
 
-    //Upgrading reload:
-    if(mouseX >= 355 && mouseX <= 495 && mouseY >= 323 && mouseY <= 373){
+    if(rldButton.click()){
         if(player.money >= powerupCost[rldLvl]){
             player.money -= powerupCost[rldLvl];
             rldLvl++;
-        }else if(rldLvl == 10){
-
+            rldButton.text = `${powerupCost[rldLvl]}`
+            if(rldLvl >= 10)rldButton.text = "MAX";
         }else{
             //izpisva not enough money
-        }        
+        }    
     }
 
-    //Upgrading money gathering
-    if(mouseX >= 355 && mouseX <= 495 && mouseY >= 427 && mouseY <= 477){
+    if(mnyButton.click()){
         if(player.money >= powerupCost[mnyLvl]){
             player.money -= powerupCost[mnyLvl];
             mnyLvl++;
-        }else if(mnyLvl == 10){
-
+            mnyButton.text = `${powerupCost[mnyLvl]}`
+            if(mnyLvl >= 10)mnyButton.text = "MAX";
         }else{
             //izpisva not enough money
-        }       
+        }    
     }
 }

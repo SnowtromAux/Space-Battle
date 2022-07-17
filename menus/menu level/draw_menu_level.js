@@ -8,8 +8,8 @@ let earnedmny;
 
 function drawLevel(index){
 
-    drawImage(backStars, sx1, sy1, 800, 600);
-    drawImage(backStars2, sx2, sy2, 800, 600);
+    drawImage(backStars, sx1, sy1, 1600, 1200);
+    drawImage(backStars2, sx2, sy2, 1600, 1200);
 
     context.fillStyle = "gray";
     context.fillRect(0, 550, 800, 50);

@@ -70,7 +70,7 @@ class Enemy{
         }
 
         if(this.rld <= 0 && littlemenu.includes("level") && areColliding(
-            0, 0, 800, 600, this.x, this.y, this.w, this.h  
+            0, 0, 1600, 1200, this.x, this.y, this.w, this.h  
         )){
             eBullets.push(new EnemyBullet(this.x, this.y, this.w, this.h, this.dmg, true, this.bType, this.rotate));
         }        
