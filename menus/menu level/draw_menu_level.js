@@ -12,45 +12,45 @@ function drawLevel(index){
     drawImage(backStars2, sx2, sy2, 1600, 1200);
 
     context.fillStyle = "gray";
-    context.fillRect(0, 550, 800, 50);
+    context.fillRect(0, 750, 1600, 80);
 
     context.strokeStyle = "black";
-    context.strokeRect(0, 550, 800, 50);
+    context.strokeRect(0, 750, 1600, 80);
     
     //Coins
-    drawImage(star , 10, 560, 30, 30);
+    drawImage(star , 10, 765, 50, 50);
         
     context.fillStyle = "white";
 
-    context.font="italic small-caps bold 30px arial";
-    context.fillText(` X `, 35, 588);
+    context.font="italic small-caps bold 50px arial";
+    context.fillText(` X `, 70, 810);
 
-    context.font="italic small-caps bold 34px arial";
-    context.fillText(`${earnedmny}`, 71, 588);
+    context.font="italic small-caps bold 54px arial";
+    context.fillText(`${earnedmny}`, 135, 810);
 
-    context.font="italic small-caps bold 30px arial";
-    context.fillText("P = Pause" , 650, 585);
+    context.font="italic small-caps bold 50px arial";
+    context.fillText("P = Pause" , 1125, 805);
     
     if(littlemenu == "warmup"){
         earnedmny = 0;
-        shipType[player.ship].draw(350, 380, 100, 100);
+        shipType[player.ship].draw(715, 360, 100, 100);
                     
         context.fillStyle = "red";
-        context.fillRect(350 , 490,  100, 13);
+        context.fillRect(715 , 470,  100, 13);
 
         context.fillStyle = "white";
         context.font="italic small-caps bold 13px arial";
 
         if(player.gameHp < 100){
-            context.fillText(`${player.gameHp}`, 389, 502);
+            context.fillText(`${player.gameHp}`, 758, 482);
         }
         
         if(player.gameHp < 1000 && player.gameHp >= 100){
-            context.fillText(`${player.gameHp}`, 387, 502);
+            context.fillText(`${player.gameHp}`, 756, 482);
         }
     
         if(player.gameHp < 10000 && player.gameHp >= 1000){
-            context.fillText(`${player.gameHp}`, 384, 502);
+            context.fillText(`${player.gameHp}`, 753, 482);
         }
 
         context.font="italic small-caps bold 100px arial";
@@ -76,11 +76,11 @@ function drawLevel(index){
     if(littlemenu == `level${index}`){
         
         if(mouseX < 50) player.x = 0;
-        else if(mouseX > 750) player.x = 700;
+        else if(mouseX >= 1380) player.x = 1330;
         else player.x = mouseX - 50;
         
         if(mouseY < 50) player.y = 0;
-        else if(mouseY > 472) player.y = 422;
+        else if(mouseY >= 670) player.y = 620;
         else player.y = mouseY - 50;
 
         player.draw(player.x, player.y, 100, 100);

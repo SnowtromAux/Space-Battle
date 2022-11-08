@@ -7,6 +7,7 @@ function clickLevels(){
     if(menu == "levels"){
 
         if(mouseX >= 300 && mouseX <= 500 && mouseY >= 530 && mouseY <= 580){
+            destroyed = 0;
             menu = "start";
             littlemenu = "nothing";
         } 
