@@ -10,15 +10,4 @@ function updateLevel(index){
         songLvl[index].pause();
         littlemenu = "pause";
     }
-
-    if(player.gameRld > 0)player.gameRld -= 0.5;
-
-    for(i = 0;i < bullets.length;i++){
-        bullets[i].y-=3;
-        if(bullets[i].y <= -10){
-            bullets[i] = bullets[bullets.length - 1];
-            bullets.pop();
-        }
-    }
-
 }

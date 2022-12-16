@@ -1,7 +1,5 @@
 let counter = 0, timer = 0;
-
-let bullets = [];
-
+let screenWidth , screenHeight;
 //Upgrade Variables
 let hpLvl = 0, bdLvl = 0, rldLvl = 0, attLvl = 0, mnyLvl = 0, penLvl = 0;
 
@@ -13,26 +11,35 @@ let completedLvl = [true , false, false, false, false, false, false, false, fals
 
 //Creating variables for powerups
 let hpBonus = [0 , 20, 50, 100, 150, 200, 400, 650, 1000, 1400, 2000], 
-bdBonus = [0, 10, 20, 40, 60, 80, 100, 150, 200, 300, 400],
-attBonus = [0, 20, 40, 60, 80, 100, 150, 200, 250, 300, 400], 
-rldBonus = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10],
-mnyBonus = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+    bdBonus = [0, 10, 20, 40, 60, 80, 100, 150, 200, 300, 400],
+    attBonus = [0, 20, 40, 60, 80, 100, 150, 200, 250, 300, 400], 
+    rldBonus = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10],
+    mnyBonus = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
 
 
 //Menu Variable
 let menu = "start", littlemenu = "nothing";
 
 //Mousedown
-let mousePress = false;
+let mousePress = false, mouseClick = false;
 
 function update(){
-
+    screenWidth = window.innerWidth;
+    screenHeight = window.innerHeight;
     player.update();
 
     for(let i = 1; i <= 15;i++){
-        if(menu == `level${i}` && littlemenu != "pause"){
+        if(menu == `level${i}` && littlemenu == `level${i}`){
             updateLevel(i);
-            player.shoot();
+            for(let j = 0;j < enemies.length;j++){
+                enemies[j].update(j);
+            }
+            for(let j = 0;j < pBullets.length;j++){
+                pBullets[j].update(j);
+            }
+            for(let j = 0;j < eBullets.length;j++){
+                eBullets[j].update();
+            }
         }
     }
 
@@ -44,7 +51,6 @@ function update(){
 }
 
 function draw() {
-
     switch(menu){
         case "start": 
             drawStart();
@@ -71,6 +77,7 @@ function draw() {
 };
 
 function mouseup() {
+    if(mouseClick === false)mouseClick = true;
     mousePress = false;
     switch(menu){
         case "start": 
@@ -96,8 +103,11 @@ function mouseup() {
             levelsClick(i);
         }
     }
+
+    if(mouseClick === true)mouseClick = undefined;
 };
 
 function mousedown(){
+    if(mouseClick === undefined)mouseClick = false;
     mousePress = true;
 };

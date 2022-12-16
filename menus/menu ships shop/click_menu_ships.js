@@ -11,8 +11,7 @@ function clickShips(){
                 
                 let posX =  + 300 + + 123 * ((i - 1) % 4);
                 let posY =  + 190 + + 120 * Math.floor((i-1) / 4);
-                
-                console.log(i + ": " + posX + " | " + posY)
+
                 if(mouseX >= posX && mouseX <= + posX + + 100 && mouseY >= posY && mouseY <= + posY + + 100)
                     littlemenu = `ship${i}_card`;
                 

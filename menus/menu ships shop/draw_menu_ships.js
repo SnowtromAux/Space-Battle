@@ -1,7 +1,7 @@
 function drawShips(){
     if(menu == "ships"){
         
-        drawImage(backStars, 0, 0, 800, 600);
+        drawImage(backStars, 0, 0, 1600, 1200);
         context.fillStyle = "#4A148C";
         context.fillRect(20, 240, 250,340)
 

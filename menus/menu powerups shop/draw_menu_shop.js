@@ -1,42 +1,50 @@
-function drawCost(variable , i){
+let hpButton = new Button("green", "black", 5, 342, 115, 140, 50, `${200}`, "white", "italic", "small-caps", "bold", 36, "arial", 153, true);
+let bdButton = new Button("green", "black", 5, 342, 215, 140, 50, `${200}`, "white", "italic", "small-caps", "bold", 36, "arial", 251.5, true);
+let attButton = new Button("green", "black", 5, 342, 315, 140, 50, `${200}`, "white", "italic", "small-caps", "bold", 36, "arial", 354, true);
+let rldButton = new Button("green", "black", 5, 342, 415, 140, 50, `${200}`, "white", "italic", "small-caps", "bold", 36, "arial", 452.5, true);
+let mnyButton = new Button("green", "black", 5, 342, 515, 140, 50, `${200}`, "white", "italic", "small-caps", "bold", 36, "arial", 554, true);
 
-    context.fillStyle = "white";
-    context.font="italic small-caps bold 36px arial";
-    let position = 53 + (i - 1)*102.5;
-    
-    if(variable < 10){
-        if(powerupCost[variable] < 1000)
-            context.fillText(powerupCost[variable] , 393, position);
-        
+let shipButton = new Button("purple", "black", 5, 1050, 375, 200, 200, "", "white", "", "", "", 0, "", 0, true)
+let bulletButton_1 = new Button("purple", "black", 5, 1075, 150, 150, 150, "", "white", "", "", "", 0, "", 0, true)
+let bulletButton_2 = new Button("purple", "black", 5, 885, 280, 150, 150, "", "white", "", "", "", 0, "", 0, false)
+let bulletButton_3 = new Button("purple", "black", 5, 1265, 280, 150, 150, "", "white", "", "", "", 0, "", 0, false)
 
-        if(powerupCost[variable] >= 1000 && powerupCost[variable] < 10000)
-            context.fillText(powerupCost[variable] , 383, position);
-        
-        
-    }else{
-        context.fillText("MAX" , 380, position);   
-    }
-    context.strokeStyle = "black";
-}
+let ShopBackButton = new Button("purple", "black", 5, 530, 680, 320, 70, "Back", "white", "italic", "small-caps", "bold", 40, "arial", 728, true); 
+
+let powerup_1Button = new Button("orange", "black", 5, 530, 110, 150,150, "", "white", "italic", "small-caps", "bold", 40, "arial", 0, true); 
+let powerup_2Button = new Button("orange", "black", 5, 530, 280, 150,150, "", "white", "italic", "small-caps", "bold", 40, "arial", 0, true); 
+let powerup_3Button = new Button("orange", "black", 5, 530, 450, 150,150, "", "white", "italic", "small-caps", "bold", 40, "arial", 0, true); 
+let powerup_4Button = new Button("orange", "black", 5, 700, 110, 150,150, "", "white", "italic", "small-caps", "bold", 40, "arial", 0, true); 
+let powerup_5Button = new Button("orange", "black", 5, 700, 280, 150,150, "", "white", "italic", "small-caps", "bold", 40, "arial", 0, true); 
+let powerup_6Button = new Button("orange", "black", 5, 700, 450, 150,150, "", "white", "italic", "small-caps", "bold", 40, "arial", 0, true); 
+
 
 function drawShop(){
     if(menu == "shop"){
         //Powerup Icons
-        drawImage(backStars, 0, 0, 800, 600);
-        drawImage(heartSmall, 10, 10, 60, 60);
-        drawImage(flyMan, 15, 114, 50, 50);  
-        drawImage(explosion, 10, 214, 60, 60);
-        drawImage(bullet, 10, 318, 60, 60);
-        drawImage(star, 10, 422, 60, 60);
+        drawImage(backStars, 0, 0, screenWidth, screenHeight);
+        
+        drawImage(heartSmall, 10, 110, 100, 100);
+        drawImage(flyMan, 25, 222, 70, 70);  
+        drawImage(explosion, 25, 320, 70, 70);
+        drawImage(bullet, 25, 420, 70, 70);
+        drawImage(star, 25, 520, 70, 70);
 
         context.fillStyle = "white";
+
+        context.font="italic small-caps 80px arial";
+        context.fillText("Upgrades", 90, 75)
+        context.fillText("Bonuses", 545, 75)
+        context.fillText("Statistics", 975, 75)
+
         context.font="italic small-caps 20px arial";
 
-        context.fillText("Max health" , 160, 40);
-        context.fillText("Body damage" , 150, 140);
-        context.fillText("Attack damage" , 140, 245);
-        context.fillText("Reload" , 175, 345);
-        context.fillText("Earnings" , 165, 445);
+
+        context.fillText("Max health" , 140, 140);
+        context.fillText("Body damage" , 140, 240);
+        context.fillText("Attack damage" , 140, 345);
+        context.fillText("Reload" , 140, 445);
+        context.fillText("Earnings" , 140, 545);
 
 
         //Health
@@ -48,8 +56,8 @@ function drawShop(){
             if(hpLvl >= i)context.fillStyle = "pink";
             else context.fillStyle = "gray";
 
-            context.fillRect(+90 + + 25*(i-1), 50, 25, 20);
-            context.strokeRect(+90 + + 25*(i-1), 50, 25, 20);
+            context.fillRect(+130 + + 35*(i-1), 175, 35, 20);
+            context.strokeRect(+130 + + 35*(i-1), 175, 35, 20);
         }
         context.strokeStyle = "black";
 
@@ -58,8 +66,8 @@ function drawShop(){
             if(bdLvl >= i)context.fillStyle = "red";
             else context.fillStyle = "gray";
 
-            context.fillRect(+90 + + 25*(i-1), 154, 25, 20);
-            context.strokeRect(+90 + + 25*(i-1), 154, 25, 20);
+            context.fillRect(+130 + + 35*(i-1), 275, 35, 20);
+            context.strokeRect(+130 + + 35*(i-1), 275, 35, 20);
         }
         context.strokeStyle = "black";
 
@@ -68,8 +76,8 @@ function drawShop(){
             if(attLvl >= i)context.fillStyle = "orange";
             else context.fillStyle = "gray";
 
-            context.fillRect(+90 + + 25*(i-1), 258, 25, 20);
-            context.strokeRect(+90 + + 25*(i-1), 258, 25, 20);
+            context.fillRect(+130 + + 35*(i-1), 375, 35, 20);
+            context.strokeRect(+130 + + 35*(i-1), 375, 35, 20);
         }
         context.strokeStyle = "black";
 
@@ -78,8 +86,8 @@ function drawShop(){
             if(rldLvl >= i)context.fillStyle = "green";
             else context.fillStyle = "gray";
 
-            context.fillRect(+90 + + 25*(i-1), 358, 25, 20);
-            context.strokeRect(+90 + + 25*(i-1), 358, 25, 20);
+            context.fillRect(+130 + + 35*(i-1), 475, 35, 20);
+            context.strokeRect(+130 + + 35*(i-1), 475, 35, 20);
         }
         context.strokeStyle = "black";
 
@@ -88,86 +96,79 @@ function drawShop(){
             if(mnyLvl >= i)context.fillStyle = "yellow";
             else context.fillStyle = "gray";
 
-            context.fillRect(+90 + + 25*(i-1), 462, 25, 20);
-            context.strokeRect(+90 + + 25*(i-1), 462, 25, 20);
+            context.fillRect(+130 + + 35*(i-1), 575, 35, 20);
+            context.strokeRect(+130 + + 35*(i-1), 575, 35, 20);
         }
         
 
-        //Buying buttons
-        context.fillStyle = "green";
-        context.strokeStyle = "black";
-
-        //health buy button
-        context.fillRect(355, 15, 140, 50);
-        context.strokeRect(355, 15, 140, 50);
-
-        //Body damage buy button
-        context.fillRect(355, 119, 140, 50);
-        context.strokeRect(355, 119, 140, 50);
-
-        //Attack damage buy button
-        context.fillRect(355, 219, 140, 50);
-        context.strokeRect(355, 219, 140, 50);
-
-        //Reload buy button
-        context.fillRect(355, 323, 140, 50);
-        context.strokeRect(355, 323, 140, 50);
-
-        //Earnings buy button
+        hpButton.draw();
+        bdButton.draw();
+        attButton.draw();
+        rldButton.draw();
+        mnyButton.draw();
         
-        context.fillRect(355, 427, 140, 50);
-        context.strokeRect(355, 427, 140, 50);
+        powerup_1Button.draw();
+        powerup_2Button.draw();
+        powerup_3Button.draw();
+        powerup_4Button.draw();
+        powerup_5Button.draw();
+        powerup_6Button.draw();
 
-        //Cost Price
-        drawCost(hpLvl , 1);
-        drawCost(bdLvl , 2);
-        drawCost(attLvl , 3);
-        drawCost(rldLvl , 4);
-        drawCost(mnyLvl , 5);
-
-
-        //Player ship
-        context.strokeStyle = "black";
-        context.strokeRect(540, 30, 200, 200);
-        context.strokeRect(539, 29, 202, 202);
-        context.strokeRect(538, 28, 204, 204);
-
-        context.fillStyle = "purple";
-        context.fillRect(540, 30, 200, 200);
-        
-        shipType[player.ship].draw(540, 30, 200, 200);
+        shipButton.draw();
+        shipType[player.ship].draw(1055, 380, 190, 190);
 
 
-        //Player Bullet
-        context.strokeStyle = "black";
-        context.strokeRect(540, 280, 200, 200);
-        context.strokeRect(539, 279, 202, 202);
-        context.strokeRect(538, 278, 204, 204);
-
-        context.fillStyle = "purple";
-        context.fillRect(540, 280, 200, 200);
-
-        bulletType[player.bullet].draw(540, 280, 200, 200)
-
-        //Back Button
-        context.fillStyle = "purple";
-        context.fillRect(530, 530, 220 ,50);
-
-        context.fillStyle = "white";
-        context.font="italic small-caps bold 40px arial";
-        context.fillText("Back", 595, 565);
+        ShopBackButton.draw();
 
 
         //Money
-        drawImage(star, 10, 530, 50,50);
+        drawImage(star, 50, 680, 50,50);
 
         context.fillStyle = "white";
         context.font="italic small-caps 50px arial";
-        context.fillText("x", 70, 570);
+        context.fillText("x", 110, 720);
 
         context.fillStyle = "white";
         context.font="italic small-caps 62px arial";
-        context.fillText(player.money, 110, 578);
-        
+        context.fillText(player.money, 150, 728);
+       
+        switch(shipType[player.ship].bNum){
+            case 1:
+                bulletButton_1.visibility = true;
+                bulletButton_2.visibility = false;
+                bulletButton_3.visibility = false;
+                
+                bulletButton_1.draw();
+
+                bulletType[shipType[player.ship].slot1].draw(1075, 150, 150, 150);
+                break;
+
+            case 2:
+                bulletButton_1.visibility = false;
+                bulletButton_2.visibility = true;
+                bulletButton_3.visibility = true;
+
+                bulletButton_2.draw();
+                bulletButton_3.draw();
+                
+                bulletType[shipType[player.ship].slot2].draw(885, 280, 150, 150);
+                bulletType[shipType[player.ship].slot3].draw(1265, 280, 150, 150);
+
+                break;
+
+            case 3:
+                bulletButton_1.visibility = true;
+                bulletButton_2.visibility = true;
+                bulletButton_3.visibility = true;
+                
+                bulletButton_1.draw();
+                bulletButton_2.draw();
+                bulletButton_3.draw();
+
+                bulletType[shipType[player.ship].slot1].draw(1075, 150, 150, 150);
+                bulletType[shipType[player.ship].slot2].draw(885, 280, 150, 150);
+                bulletType[shipType[player.ship].slot3].draw(1265, 280, 150, 150);
+                break;
+        }
     }
 }

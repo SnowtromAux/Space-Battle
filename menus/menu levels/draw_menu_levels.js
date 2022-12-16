@@ -1,6 +1,6 @@
 function drawLevels(){
     if(menu == "levels"){
-        drawImage(backStars , 0, 0, 800, 600);
+        drawImage(backStars , 0, 0, 1600, 1200);
         context.beginPath();
 
         context.fillStyle = "purple";
@@ -13,7 +13,8 @@ function drawLevels(){
         for(let i = 1;i <= 15;i++){
             context.beginPath();
         
-            if(completedLvl[i-1])context.fillStyle = "green";
+            if(completedLvl[i-1] && completedLvl[i])context.fillStyle = "green";
+            else if(completedLvl[i-1] && !completedLvl[i])context.fillStyle = "orange"
             else context.fillStyle = "red";
             let oX = + 100 + + 150 * ((i - 1) % 5);
             let oY = + 105 + + 150 * (Math.floor((i - 1) / 5));
